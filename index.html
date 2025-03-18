@@ -14,40 +14,46 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+        </div>
+    </header>
     <main>
         <div class="grid">
-
             <div class="container">
                 <form class="grid__form" action="submit">
                     <table class="grid__wrapper">
                         <thead id="grid__thead">
                             <tr class="grid__row-header">
-                                <th id="name">Name</th>
-                                <th id="priority">Priority</th>
-                                <th id="startedAt">Started at</th>
-                                <th id="status">Status</th>
-                                <th id="status">Timer</th>
-                                <th id="status">Action</th>
+                                <th class="name">Title</th>
+                                <th class="priority">Priority</th>
+                                <th class="startedAt">Started at</th>
+                                <th class="status">Status</th>
+                                <th class="tracker">Tracker</th>
+                                <th class="action">Action</th>
                             </tr>
                         </thead>
                         <tbody id="grid__tbody">
-                            <tr>
-                                <td><input class="" id="input-title" type="text" placeholder="title"></td>
-                                <td><Select>
-                                    <option value="status-waiting">Low</option>
-                                    <option value="status-inprogress">Mid</option>
-                                    <option value="status-inprogress">High</option>
-                                </Select></td>
-                                <td><span>??:??:??</span></td>
+                            <tr class="grid__add-block">
                                 <td>
-                                    <Select>
-                                    <option value="status-waiting">Waiting-for</option>
-                                    <option value="status-inprogress">In-progress</option>
-                                    <option value="status-inprogress">Finished</option>
-                                </Select>
-                            </td>
-                                <td>??:??:??</td>
-                                <td><button type="button" disabled>ready?</button></td>
+                                    <input class="grid__add-content-text" id="input-title" type="text"
+                                        placeholder="type text...">
+                                </td>
+                                <td><Select id="priority">
+                                        <option value="low">Low</option>
+                                        <option value="mid">Mid</option>
+                                        <option value="high">High</option>
+                                    </Select></td>
+                                <td><span id="started-at">??:??:??</span></td>
+                                <td>
+                                    <Select id="status">
+                                        <option value="waiting">Waiting-for</option>
+                                        <option value="inprogress">In-progress</option>
+                                        <option value="finished">Finished</option>
+                                    </Select>
+                                </td>
+                                <td><span id="tracker">??:??:??</span></td>
+                                <td><button id="add-task" type="button">Add</button></td>
                             </tr>
                             <tr class="grid__row">
                                 <td>Выбросить мусор и сходить в магазин и постирать вещи и побегать</td>
@@ -67,9 +73,13 @@
                                     </Select>
                                 </td>
                                 <td>00:00:00</td>
-                                <td><button type="button">ready?</button></td>
+                                <td>
+                                    <button class="button button--ready" type="button">ready?</button>
+                                    <button class="button button--edit" type="button">edit</button>
+                                    <button class="button button--remove" type="button">remove</button>
+                                </td>
                             </tr>
-                            <tr>
+                            <tr class="grid__row">
                                 <td>Починить крышу</td>
                                 <td>
                                     <Select>
@@ -87,7 +97,11 @@
                                     </Select>
                                 </td>
                                 <td>00:00:00</td>
-                                <td><button type="button">ready?</button></td>
+                                <td>
+                                    <button class="button button--ready" type="button">ready?</button>
+                                    <button class="button button--edit" type="button">edit</button>
+                                    <button class="button button--remove" type="button">remove</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -98,6 +112,6 @@
     <footer>
     </footer>
 </body>
-<script src=""></script>
+<script src="js/app.js"></script>
 
 </html>
