@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="grid">
+
+            <div class="container">
+                <form class="grid__form" action="submit">
+                    <table class="grid__wrapper">
+                        <thead id="grid__thead">
+                            <tr class="grid__row-header">
+                                <th id="name">Name</th>
+                                <th id="priority">Priority</th>
+                                <th id="startedAt">Started at</th>
+                                <th id="status">Status</th>
+                                <th id="status">Timer</th>
+                                <th id="status">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="grid__tbody">
+                            <tr>
+                                <td><input class="" id="input-title" type="text" placeholder="title"></td>
+                                <td><Select>
+                                    <option value="status-waiting">Low</option>
+                                    <option value="status-inprogress">Mid</option>
+                                    <option value="status-inprogress">High</option>
+                                </Select></td>
+                                <td><span>??:??:??</span></td>
+                                <td>
+                                    <Select>
+                                    <option value="status-waiting">Waiting-for</option>
+                                    <option value="status-inprogress">In-progress</option>
+                                    <option value="status-inprogress">Finished</option>
+                                </Select>
+                            </td>
+                                <td>??:??:??</td>
+                                <td><button type="button" disabled>ready?</button></td>
+                            </tr>
+                            <tr class="grid__row">
+                                <td>Выбросить мусор и сходить в магазин и постирать вещи и побегать</td>
+                                <td>
+                                    <Select>
+                                        <option value="status-waiting">Low</option>
+                                        <option value="status-inprogress">Mid</option>
+                                        <option value="status-inprogress">High</option>
+                                    </Select>
+                                </td>
+                                <td>25.12.2024</td>
+                                <td>
+                                    <Select>
+                                        <option value="status-waiting">Waiting-for</option>
+                                        <option value="status-inprogress">In-progress</option>
+                                        <option value="status-inprogress">Finished</option>
+                                    </Select>
+                                </td>
+                                <td>00:00:00</td>
+                                <td><button type="button">ready?</button></td>
+                            </tr>
+                            <tr>
+                                <td>Починить крышу</td>
+                                <td>
+                                    <Select>
+                                        <option value="status-waiting">Low</option>
+                                        <option value="status-inprogress">Mid</option>
+                                        <option value="status-inprogress">High</option>
+                                    </Select>
+                                </td>
+                                <td>25.03.2025</td>
+                                <td>
+                                    <Select>
+                                        <option value="status-waiting">Waiting-for</option>
+                                        <option value="status-inprogress">In-progress</option>
+                                        <option value="status-finished">Finished</option>
+                                    </Select>
+                                </td>
+                                <td>00:00:00</td>
+                                <td><button type="button">ready?</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+<script src=""></script>
+
+</html>
