@@ -9,14 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
     <header class="header">
-        <div class="container">
-            <span id="tracker-{{taskId}}">00:00:00</span>
-        </div>
     </header>
     <main>
         <div class="grid">
@@ -25,6 +22,8 @@
                     <table class="grid__wrapper">
                         <thead id="grid__thead">
                             <tr class="grid__row-header">
+                                <th class="number">№</th>
+                                <th></th>
                                 <th class="name">Title</th>
                                 <th class="priority">Priority</th>
                                 <th class="startedAt">Started at</th>
@@ -33,28 +32,31 @@
                                 <th class="action">Action</th>
                             </tr>
                         </thead>
+                        <tr class="grid__add-block">
+                            <td>
+                                <input class="grid__add-content-text" id="input-title" type="text"
+                                       placeholder="type text...">
+                            </td>
+                            <td>
+                                <Select id="priority">
+                                    <option value="low">Low</option>
+                                    <option value="mid">Mid</option>
+                                    <option value="high">High</option>
+                                </Select>
+                            </td>
+                            <td><span id="started-at">??:??:??</span></td>
+                            <td>
+                                <Select id="status">
+                                    <option value="waiting-for">Waiting-for</option>
+                                    <option value="in-progress">In-progress</option>
+                                    <option value="finished">Finished</option>
+                                </Select>
+                            </td>
+                            <td><span id="tracker">??:??:??</span></td>
+                            <td><button id="add-task" type="button">create</button></td>
+                        </tr>
                         <tbody id="grid__tbody">
-                            <tr class="grid__add-block">
-                                <td>
-                                    <input class="grid__add-content-text" id="input-title" type="text"
-                                        placeholder="type text...">
-                                </td>
-                                <td><Select id="priority">
-                                        <option value="low">Low</option>
-                                        <option value="mid">Mid</option>
-                                        <option value="high">High</option>
-                                    </Select></td>
-                                <td><span id="started-at">??:??:??</span></td>
-                                <td>
-                                    <Select id="status">
-                                        <option value="waiting-for">Waiting-for</option>
-                                        <option value="in-progress">In-progress</option>
-                                        <option value="finished">Finished</option>
-                                    </Select>
-                                </td>
-                                <td><span id="tracker">??:??:??</span></td>
-                                <td><button id="add-task" type="button">create</button></td>
-                            </tr>
+
                             <tr class="grid__row">
                                 <td>Выбросить мусор и сходить в магазин и постирать вещи и побегать</td>
                                 <td>

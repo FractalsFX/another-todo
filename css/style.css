@@ -24,7 +24,21 @@
 
 tr {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px rgb(241, 241, 241) solid;
+}
+
+.title {
+  display: block;
+  word-wrap: break-word;
+  width: 400px;
+}
+
+.grid__add-block {
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr 1fr 1fr;
   gap: 20px;
   padding: 10px 0;
   border-bottom: 1px rgb(241, 241, 241) solid;
@@ -78,7 +92,7 @@ input {
   padding: 8px 10px;
   filter: drop-shadow(4px 4px);
   outline: none;
-  width: 90%;
+  width: 80%;
 }
 
 input:focus {
@@ -90,9 +104,3 @@ input:focus {
   height: 100px;
 }
 
-.icon__trash {
-  display: block;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
