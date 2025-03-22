@@ -144,6 +144,7 @@ function renderTasks() {
         optionStatusEl3.value = 'finished';
         optionStatusEl3.textContent = 'Finished';
 
+        //Логика селекта статус
         if (tasksToRender[i].status === optionStatusEl1.value) {
             optionStatusEl1.selected = true;
             spanIndicator.style.background = 'red';
@@ -184,15 +185,31 @@ function renderTasks() {
         buttonActionEdit.className = 'button button--edit';
         buttonActionEdit.textContent = 'edit';
         
+        buttonActionEdit.addEventListener('click', () => {
+            //////////сделать изменение
+        })
+        
         const buttonActionRemove = document.createElement('button');
         buttonActionRemove.type = 'button';
         buttonActionRemove.className = 'button button--remove';
         buttonActionRemove.textContent = 'remove';
+        
+        console.log(tasksToRender[i]);
+        
+        buttonActionRemove.addEventListener('click', function () {
+            deleteTask(i);
+        });
 
         trRowEl.append(tdActionEl);
         tdActionEl.append(buttonActionEdit);
         tdActionEl.append(buttonActionRemove);
     }
+}
+
+function deleteTask(task) {
+    tasks.splice(task, 1);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    renderTasks();
 }
 
 renderTasks();
