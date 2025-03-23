@@ -7,7 +7,7 @@ const tbodyEl = document.querySelector('#grid__tbody');
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 
-//Элементы таски
+//Task Elements
 const titleTask = document.querySelector('#input-title');
 const priorityTask = document.querySelector('#priority');
 const startedAtTask = document.querySelector('#started-at');
@@ -15,7 +15,7 @@ const statusTask = document.querySelector('#status');
 const trackerTask = document.querySelector('#tracker');
 
 
-//Сброс инпутов
+//Input Reset
 function resetInputs() {
     titleTask.value = '';
     priorityTask.value = 'low';
@@ -25,7 +25,7 @@ function resetInputs() {
 }
 
 
-//Добавление таски в локал
+//Add Task To LocalStorage
 function addData() {
     const taskObject = {
         title: titleTask.value,
@@ -42,10 +42,9 @@ function addData() {
 }
 
 
-//Рендер
+//Render
 function renderTasks() {
     let tasksToRender = JSON.parse(localStorage.getItem('tasks')) || [];
-
     tbodyEl.innerHTML = '';
     
     for (let i = 0; i < tasksToRender.length; i++) {
@@ -221,6 +220,7 @@ function renderTasks() {
     }
 }
 
+//Delete Task Button
 function deleteTask(task) {
     tasks.splice(task, 1);
     localStorage.setItem('tasks', JSON.stringify(tasks));
