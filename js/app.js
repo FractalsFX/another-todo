@@ -88,6 +88,7 @@ function renderTasks() {
         const tdPriorityEl = document.createElement('td');
         
         const selectPriorityEl = document.createElement('select');
+        selectPriorityEl.className = 'select-priority';
         
         const optionPriorityEl1 = document.createElement('option');
         optionPriorityEl1.value = 'low';
@@ -117,6 +118,13 @@ function renderTasks() {
         selectPriorityEl.append(optionPriorityEl2);
         selectPriorityEl.append(optionPriorityEl3);
 
+        selectPriorityEl.addEventListener('change', () => {
+            console.log(selectPriorityEl.value);
+            tasks[i].priority = selectPriorityEl.value;
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        });
+        
+
 
         //----------------STARTED AT
         const tdStartedAt = document.createElement('td');
@@ -144,6 +152,7 @@ function renderTasks() {
         optionStatusEl3.value = 'finished';
         optionStatusEl3.textContent = 'Finished';
 
+        
         //Логика селекта статус
         if (tasksToRender[i].status === optionStatusEl1.value) {
             optionStatusEl1.selected = true;
@@ -163,7 +172,20 @@ function renderTasks() {
         selectStatusEl.append(optionStatusEl1);
         selectStatusEl.append(optionStatusEl2);
         selectStatusEl.append(optionStatusEl3);
-
+        
+        selectStatusEl.addEventListener('change', () => {
+            tasks[i].status = selectStatusEl.value;
+            console.log(tasks[i].status);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            if (tasks[i].status === 'waiting-for') {
+                spanIndicator.style.background = 'red';
+            } else if (tasks[i].status === 'in-progress') {
+                spanIndicator.style.background = 'yellow';
+            } else if (tasks[i].status === 'finished') {
+                spanIndicator.style.background = 'green';
+            }
+        });
+        
 
         //----------------TRACKER
         const tdTrackerEl = document.createElement('td');
@@ -180,28 +202,21 @@ function renderTasks() {
         tdActionEl.style.display = 'flex';
         tdActionEl.style.gap = '10px';
         
-        const buttonActionEdit = document.createElement('button');
-        buttonActionEdit.type = 'button';
-        buttonActionEdit.className = 'button button--edit';
-        buttonActionEdit.textContent = 'edit';
-        
-        buttonActionEdit.addEventListener('click', () => {
-            //////////сделать изменение
-        })
-        
         const buttonActionRemove = document.createElement('button');
         buttonActionRemove.type = 'button';
         buttonActionRemove.className = 'button button--remove';
         buttonActionRemove.textContent = 'remove';
         
-        console.log(tasksToRender[i]);
-        
         buttonActionRemove.addEventListener('click', function () {
-            deleteTask(i);
+            let res;
+            res = confirm('Are you sure?');
+            
+            if (res === true) {
+                deleteTask(i);
+            } else { alert('Cancel ok'); }
         });
 
         trRowEl.append(tdActionEl);
-        tdActionEl.append(buttonActionEdit);
         tdActionEl.append(buttonActionRemove);
     }
 }
